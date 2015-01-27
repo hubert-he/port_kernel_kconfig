@@ -1,0 +1,45 @@
+mainmenu "TEST Configuration"
+
+menu "TEST (A && !B) (!A && B) "
+# A B 属于互相强依赖关系，要么A, 要么B
+choice
+	prompt "ONLY A or ONLY B"
+	default A
+	config A
+		bool "A Macro"
+		help
+			enable A, and B will disabled
+	config B
+		bool "B Macro"
+		help
+			enable B, and A will disabled
+endchoice
+
+endmenu
+
+menu "TEST B belongs to A"
+# A B 属于强依赖关系，A必须选中，B才能可配置
+menuconfig A2
+	bool "A2 Macro"
+	default y
+config B2
+	bool "B2 Macro"
+	depends on A2
+	default y
+---help---
+Note: that is when ONLY A enbale , B can be configured.
+endmenu
+
+menu "TEST default value of B will be effected by A"
+# A B 属于弱依赖关系，仅仅影响默认值而已
+config A3
+	bool "A3 Macro"
+	default y
+config B3
+	bool "B3 Macro"
+	default y if A3
+
+endmenu
+
+
+

@@ -1,0 +1,22 @@
+#
+# Automatically generated file; DO NOT EDIT.
+# TEST Configuration
+#
+
+#
+# TEST (A && !B) (!A && B) 
+#
+CONFIG_A=y
+# CONFIG_B is not set
+
+#
+# TEST B belongs to A
+#
+CONFIG_A2=y
+CONFIG_B2=y
+
+#
+# TEST default value of B will be effected by A
+#
+CONFIG_A3=y
+CONFIG_B3=y
