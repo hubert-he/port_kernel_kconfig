@@ -14,8 +14,12 @@ the portable linux kernel Kconfig
 
 TestCase运行方式
 =========================================
-1. oskConf Kconfig 
+1. 运行命令： 
+    ./oskConf Kconfig 
 2. 可视化配置
-![image](https://github.com/hubert-he/port_kernel_kconfig/blob/master/TestCase/img1.jpg)
+  如下图
 3. 生成config.func文件
+  保存
+
+![image](https://github.com/hubert-he/port_kernel_kconfig/blob/master/TestCase/img1.jpg)
 
